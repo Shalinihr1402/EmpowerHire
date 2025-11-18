@@ -17,8 +17,6 @@ Tech stack
 
 Screenshot section (you can add later)
 
-⭐ UPDATED PROFESSIONAL README FOR EMPOWERHIRE
-
 
 🌟 EmpowerHire
 Empowering Special Talent with Opportunities
