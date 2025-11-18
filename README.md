@@ -1,6 +1,4 @@
-ChatGPT said:
 
-Perfect Shals! ❤️
 Let’s update your GitHub README so your EmpowerHire project looks professional and impressive.
 
 I will give you a beautiful, clean, complete README that explains:
@@ -19,13 +17,8 @@ Tech stack
 
 Screenshot section (you can add later)
 
-Roadmap
-
-You can copy–paste this directly into your README.md on GitHub.
-
 ⭐ UPDATED PROFESSIONAL README FOR EMPOWERHIRE
 
-Copy everything below:
 
 🌟 EmpowerHire
 Empowering Special Talent with Opportunities
@@ -141,7 +134,7 @@ EmpowerHire/
 
 Clone the repository
 
-git clone https://github.com/YOUR-USERNAME/EmpowerHire.git
+git clone https://github.com/Shalinihr1402/EmpowerHire.git
 
 
 Install dependencies
