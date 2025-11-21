@@ -1,24 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 export default function Navbar() {
   return (
-    <nav
-      style={{
-        width: "100%",
-        padding: "15px 40px",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        borderBottom: "1px solid #e5e5e5",
-        background: "white",
-      }}
-    >
-      <h2 style={{ margin: 0, color: "#007bff", fontWeight: "bold" }}>
-        EmpowerHire
-      </h2>
+    <nav className="navbar">
+      <div className="nav-left">
+        <img src="/logo.png" className="nav-logo" alt="EmpowerHire" />
+        <h1 className="nav-title">EmpowerHire</h1>
+      </div>
 
-      <div style={{ display: "flex", gap: "20px" }}>
-        <a href="#" style={{ textDecoration: "none", color: "black" }}>Home</a>
+      <div className="nav-links">
+        <Link to="/">Home</Link>
+        <Link to="/it-jobs">IT Jobs</Link>
+        <Link to="/non-it-jobs">Non-IT Jobs</Link>
+        <Link to="/mnc-jobs">MNC Jobs</Link>
+        <Link to="/self-employed">Self Employment</Link>
+        <Link to="/ai-tools">AI Tools</Link>
+        <Link to="/profile">Profile</Link>
+
+        <img src="/logo.png" className="navbar-logo" alt="EmpowerHire" />
+
       </div>
     </nav>
   );

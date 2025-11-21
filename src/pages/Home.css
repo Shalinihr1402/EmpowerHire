@@ -1,0 +1,157 @@
+/* GLOBAL */
+.home {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #111;
+  padding-bottom: 50px;
+}
+
+/* HERO SECTION */
+.hero-modern {
+  background: linear-gradient(135deg, #e8f0ff, #ffffff);
+  padding: 60px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+}
+
+.hero-content h1 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.hero-content span {
+  color: #0066ff;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #444;
+}
+
+.hero-btn {
+  margin-top: 20px;
+  background: #0066ff;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.hero-btn:hover {
+  background: #004ecc;
+}
+
+.hero-image {
+  width: 180px;
+  border-radius: 12px;
+}
+
+/* JOB CATEGORY GRID */
+.job-categories {
+  padding: 60px 8%;
+  text-align: center;
+}
+
+.category-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.category-card {
+  padding: 25px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.category-card h3 {
+  color: #0066ff;
+}
+
+.category-card button {
+  margin-top: 15px;
+  background: #0066ff;
+  border: none;
+  padding: 8px 18px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* COMPANY LOGOS */
+.companies-modern {
+  padding: 40px 8%;
+  text-align: center;
+}
+
+.company-logos-modern img {
+  width: 120px;
+  margin: 0 25px;
+  opacity: 0.85;
+  transition: 0.3s;
+}
+
+.company-logos-modern img:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* FEATURES */
+.features-modern {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 5%;
+}
+
+.feature-card-modern {
+  background: white;
+  padding: 30px;
+  width: 28%;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.feature-card-modern:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.feature-card-modern h3 {
+  color: #0066ff;
+}
+/* UNIVERSAL LOGO STYLE */
+.empowerhire-logo {
+  width: 70px;               /* Bigger & premium */
+  height: 70px;
+  border-radius: 14px;       /* Smooth rounded corners */
+  background: #ffffff;       /* Clean white background */
+  padding: 8px;              /* Inner spacing */
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);   /* Modern shadow */
+  transition: all 0.3s ease;
+  object-fit: contain;       /* Keeps logo crisp */
+}
+
+/* Hover effect — premium */
+.empowerhire-logo:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
