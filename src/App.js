@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import ITJobs from "./pages/ITJobs";
 import NonITJobs from "./pages/NonITJobs";
 import MNCJobs from "./pages/MNCJobs";
-import SelfEmployed from "./pages/SelfEmployed";
+import SelfEmployed from "./pages/WorkFromHome";
 import AITools from "./pages/AITools";
 import Profile from "./pages/Profile";
 import GovernmentJobs from "./pages/GovernmentJobs";

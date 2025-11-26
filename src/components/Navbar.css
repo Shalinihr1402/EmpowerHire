@@ -68,5 +68,21 @@
   transform: translateY(-4px) scale(1.05);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
+.navbar a {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #003d99;
+  display: inline-block;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
 
+.navbar a:hover {
+  transform: translateY(-3px);
+  color: #0066ff;
+}
 
+.navbar {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
