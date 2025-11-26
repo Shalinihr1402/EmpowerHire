@@ -16,6 +16,8 @@ export default function Navbar() {
         <Link to="/non-it-jobs">Non-IT Jobs</Link>
         <Link to="/mnc-jobs">MNC Jobs</Link>
         <Link to="/self-employed">Self Employment</Link>
+        <Link to="/government-jobs">Government Jobs</Link>
+
         <Link to="/ai-tools">AI Tools</Link>
         <Link to="/profile">Profile</Link>
 
