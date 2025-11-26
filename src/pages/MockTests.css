@@ -1,0 +1,9 @@
+.mock-card h2 {
+  color: #0057ff;
+  font-weight: 800;
+}
+
+.mock-card p {
+  color: #33415c;
+  margin-bottom: 18px;
+}

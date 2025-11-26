@@ -1,88 +1,172 @@
+/* NAVBAR BASE */
 .navbar {
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 15px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
-  background: white;
-  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.nav-logo {
-  height: 45px;
-}
-
-.nav-title {
-  font-size: 26px;
-  font-weight: bold;
+/* LOGO */
+.logo a {
   color: #0057ff;
+  font-size: 28px;
+  font-weight: 800;
+  text-decoration: none;
 }
 
+/* NAV LINKS (DESKTOP) */
 .nav-links {
+  list-style: none;
   display: flex;
   gap: 25px;
+  align-items: center;
 }
 
-.nav-links a {
+/* LINK STYLE */
+.nav-links a,
+.nav-links span {
   text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  position: relative;
+  cursor: pointer;
+  padding: 6px 3px;
+  transition: 0.3s ease;
+}
+
+/* ACTIVE LINK (Underline Animation) */
+.nav-links a.active::after,
+.nav-links span.active::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: #0057ff;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  border-radius: 3px;
+}
+
+/* Hover underline */
+.nav-links a:hover::after,
+.nav-links span:hover::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: #0066ff;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  border-radius: 3px;
+  animation: slideIn 0.3s forwards;
+}
+
+@keyframes slideIn {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+/* DROPDOWN MENU */
+.dropdown-menu {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 75, 255, 0.18);
+  padding: 12px;
+  width: 200px;
+
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: 0.25s ease;
+}
+
+/* SHOW DROPDOWN */
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+/* Dropdown Items */
+.dropdown-menu a {
+  display: block;
+  padding: 10px;
   font-size: 16px;
   color: #333;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.25s ease;
 }
 
-.nav-links a:hover {
+.dropdown-menu a:hover {
+  background: #eef3ff;
   color: #0057ff;
 }
-.navbar-logo {
-  width: 55px;
-  height: 55px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  transition: 0.3s ease-in-out;
-  background: white;
-  padding: 5px;
+
+/* MOBILE MENU */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #0057ff;
 }
 
-.navbar-logo:hover {
-  transform: scale(1.08);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+/* MOBILE RESPONSIVE */
+@media (max-width: 900px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 75px;
+    right: -100%;
+    background: #ffffff;
+    width: 260px;
+    height: 100vh;
+    flex-direction: column;
+    gap: 22px;
+    padding: 30px;
+    transition: 0.4s ease;
+  }
+
+  .nav-links.mobile-open {
+    right: 0;
+  }
+
+  .dropdown-menu {
+    position: relative;
+    top: 0;
+    left: 0;
+    box-shadow: none;
+    padding-left: 15px;
+  }
 }
-/* UNIVERSAL LOGO STYLE */
-.empowerhire-logo {
-  width: 70px;               /* Bigger & premium */
-  height: 70px;
-  border-radius: 14px;       /* Smooth rounded corners */
-  background: #ffffff;       /* Clean white background */
-  padding: 8px;              /* Inner spacing */
-  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);   /* Modern shadow */
-  transition: all 0.3s ease;
-  object-fit: contain;       /* Keeps logo crisp */
+.register-btn {
+  background: #0057ff;
+  color: #fff !important;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s ease;
 }
 
-/* Hover effect — premium */
-.empowerhire-logo:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-}
-.navbar a {
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-  color: #003d99;
-  display: inline-block;
-  transition: transform 0.25s ease, color 0.25s ease;
-}
-
-.navbar a:hover {
-  transform: translateY(-3px);
-  color: #0066ff;
-}
-
-.navbar {
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+.register-btn:hover {
+  background: #003fcc;
+  transform: translateY(-2px);
 }

@@ -1,130 +1,98 @@
 import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import "./Navbar.css";
 
 export default function Navbar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [openJobsMenu, setOpenJobsMenu] = useState(false);  // FIXED
+  const [openJobsMenu, setOpenJobsMenu] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const location = useLocation();
 
   return (
-    <nav style={styles.navbar}>
+    <nav className="navbar">
       {/* Logo */}
-      <div style={styles.logo}>EmpowerHire</div>
+      <div className="logo">
+        <Link to="/">EmpowerHire</Link>
+      </div>
 
-      {/* Links */}
-      <ul style={styles.navLinks}>
-        <li><a href="/" style={styles.link}>Home</a></li>
+      {/* Hamburger Menu (Mobile) */}
+      <div
+        className="hamburger"
+        onClick={() => setMobileMenu(!mobileMenu)}
+      >
+        ☰
+      </div>
 
-        {/* JOBS DROPDOWN */}
-        <li
-          style={styles.dropdown}
-          onMouseEnter={() => setOpenJobsMenu(true)}   // FIXED
-          onMouseLeave={() => setOpenJobsMenu(false)}  // FIXED
-        >
-          <span style={styles.link}>Jobs ⌄</span>
-
-          {openJobsMenu && (                         // FIXED
-            <div style={styles.dropdownMenu}>
-              <a href="/it-jobs" style={styles.dropdownItem}>IT Jobs</a>
-              <a href="/non-it-jobs" style={styles.dropdownItem}>Non-IT Jobs</a>
-              <a href="/mnc-jobs" style={styles.dropdownItem}>MNC Jobs</a>
-              <a href="/government-jobs" style={styles.dropdownItem}>Government Jobs</a>
-              <a href="/work-from-home" style={styles.dropdownItem}>Work From Home</a>  {/* FIXED */}
-            </div>
-          )}
+      {/* Nav Links */}
+      <ul className={mobileMenu ? "nav-links mobile-open" : "nav-links"}>
+        
+        <li>
+          <Link
+            to="/"
+            className={location.pathname === "/" ? "active" : ""}
+          >
+            Home
+          </Link>
         </li>
 
-        <li><a href="/ai-tools" style={styles.link}>AI Tools</a></li>
-        <li><a href="/mock-tests" style={styles.link}>Mock Tests</a></li>
-      </ul>
+        {/* Jobs Dropdown */}
+        <li
+          className="dropdown"
+          onMouseEnter={() => setOpenJobsMenu(true)}
+          onMouseLeave={() => setOpenJobsMenu(false)}
+        >
+          <span
+            className={
+              location.pathname.includes("jobs") ||
+              location.pathname.includes("work-from-home")
+                ? "active"
+                : ""
+            }
+          >
+            Jobs ⌄
+          </span>
 
-      {/* RIGHT SIDE */}
-      <div style={styles.rightSection}>
-        {!isLoggedIn ? (
-          <a href="/register" style={styles.registerButton}>Register</a>
-        ) : (
-          <a href="/profile">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png"
-              alt="profile"
-              style={styles.profileIcon}
-            />
-          </a>
-        )}
-      </div>
+          {/* Dropdown Menu */}
+          <div className={openJobsMenu ? "dropdown-menu show" : "dropdown-menu"}>
+            <Link to="/it-jobs">IT Jobs</Link>
+            <Link to="/non-it-jobs">Non-IT Jobs</Link>
+            <Link to="/mnc-jobs">MNC Jobs</Link>
+            <Link to="/government-jobs">Government Jobs</Link>
+            <Link to="/work-from-home">Work From Home</Link>
+          </div>
+        </li>
+
+        <li>
+          <Link
+            to="/ai-tools"
+            className={location.pathname === "/ai-tools" ? "active" : ""}
+          >
+            AI Tools
+          </Link>
+        </li>
+
+        <li>
+          <Link
+            to="/mock-tests"
+            className={location.pathname === "/mock-tests" ? "active" : ""}
+          >
+            Mock Tests
+          </Link>
+        </li>
+
+        <li>
+          <Link
+            to="/profile"
+            className={location.pathname === "/profile" ? "active" : ""}
+          >
+            Profile
+          </Link>
+        </li>
+        <li>
+          <Link
+             to="/register" className="register-btn">Register</Link>
+        </li>
+
+      </ul>
     </nav>
   );
 }
-
-const styles = {
-  navbar: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "15px 40px",
-    backgroundColor: "#fff",
-    boxShadow: "0 2px 15px rgba(0,0,0,0.1)",
-  },
-
-  logo: {
-    fontSize: "28px",
-    fontWeight: "bold",
-    color: "#0057ff",
-  },
-
-  navLinks: {
-    display: "flex",
-    gap: "25px",
-    listStyle: "none",
-  },
-
-  link: {
-    textDecoration: "none",
-    color: "#444",
-    fontSize: "18px",
-  },
-
-  dropdown: {
-    position: "relative",
-  },
-
-  dropdownMenu: {
-    position: "absolute",
-    top: "30px",
-    backgroundColor: "#fff",
-    padding: "10px",
-    borderRadius: "10px",
-    boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
-    width: "180px",
-    display: "flex",
-    flexDirection: "column",
-    gap: "10px",
-  },
-
-  dropdownItem: {
-    color: "#444",
-    textDecoration: "none",
-    padding: "8px",
-    borderRadius: "6px",
-    fontSize: "15px",
-  },
-
-  rightSection: {
-    display: "flex",
-    alignItems: "center",
-  },
-
-  registerButton: {
-    backgroundColor: "#0057ff",
-    color: "#fff",
-    padding: "8px 18px",
-    borderRadius: "6px",
-    textDecoration: "none",
-    fontWeight: "bold",
-  },
-
-  profileIcon: {
-    width: "40px",
-    height: "40px",
-    borderRadius: "50%",
-    cursor: "pointer",
-  },
-};

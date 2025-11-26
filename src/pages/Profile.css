@@ -1,0 +1,36 @@
+/* Profile Form Card */
+.profile-card {
+  background: linear-gradient(180deg, #ffffff, #eef5ff);
+  border: 1px solid rgba(0, 110, 255, 0.15);
+  box-shadow: 0 12px 35px rgba(0, 110, 255, 0.12);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Labels */
+.profile-label {
+  font-weight: 700;
+  color: #003b80;
+  margin-bottom: 6px;
+  display: block;
+  margin-top: 12px;
+}
+
+/* Input Fields */
+.profile-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #bdd7ff;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+/* File Upload */
+.profile-file {
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
