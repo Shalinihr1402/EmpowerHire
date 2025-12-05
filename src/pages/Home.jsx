@@ -1,6 +1,7 @@
-// FULL UPDATED Home.jsx (with universal card style applied everywhere)
+
 import React from "react";
 import "./Home.css";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -17,7 +18,8 @@ export default function Home() {
               A dedicated inclusive hiring platform connecting specially-abled individuals
               with supportive companies, meaningful careers, and equal opportunities across India.
             </p>
-            <button className="btn-primary">Explore Opportunities</button>
+              <a href="/jobs" className="btn-primary hero-link-btn">Explore Opportunities →</a>
+
           </div>
 
           <div className="hero-right">
@@ -54,29 +56,51 @@ export default function Home() {
 
       {/* JOB CATEGORIES */}
       <section className="categories-section">
-        <div className="container">
-          <h2 className="section-title">Explore Job Categories</h2>
+  <div className="container">
+    <h2 className="section-title">Explore Job Categories</h2>
 
-          <div className="category-grid">
-            {[
-              ["IT Jobs", "Explore software, cloud, AI, and development roles."],
-              ["Non-IT Jobs", "Administrative, HR, finance, support and more."],
-              ["MNC Jobs", "Top global companies hiring across India."],
-              ["Government Jobs", "All up-to-date job notifications and alerts."],
-              ["Work From Home", "Remote-friendly opportunities for flexible working."],
-              ["Assignment Writing", "Academic / project writing jobs for students & freelancers."],
-              ["Notes Writing", "Handwritten & digital notes creation opportunities."],
-              ["Packing Jobs", "Home-based packing for small businesses."]
-            ].map(([title, desc], i) => (
-              <article className="category-card card-universal" key={i}>
-                <h3>{title}</h3>
-                <p>{desc}</p>
-                <button className="card-btn">View More →</button>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+    <div className="category-grid">
+
+      {/* IT Jobs */}
+      <article className="category-card card-universal">
+        <h3>IT Jobs</h3>
+        <p>Explore software, cloud, AI, and development roles.</p>
+        <Link to="/it-jobs" className="card-btn">View More →</Link>
+      </article>
+
+      {/* Non-IT Jobs */}
+      <article className="category-card card-universal">
+        <h3>Non-IT Jobs</h3>
+        <p>Administrative, HR, finance, support and more.</p>
+        <Link to="/non-it-jobs" className="card-btn">View More →</Link>
+      </article>
+
+      {/* MNC Jobs */}
+      <article className="category-card card-universal">
+        <h3>MNC Jobs</h3>
+        <p>Top global companies hiring across India.</p>
+        <Link to="/mnc-jobs" className="card-btn">View More →</Link>
+      </article>
+
+      {/* Government Jobs */}
+      <article className="category-card card-universal">
+        <h3>Government Jobs</h3>
+        <p>All up-to-date job notifications and alerts.</p>
+        <Link to="/government-jobs" className="card-btn">View More →</Link>
+      </article>
+
+      {/* Work From Home */}
+      <article className="category-card card-universal">
+        <h3>Work From Home</h3>
+        <p>Remote-friendly opportunities for flexible working.</p>
+        <Link to="/work-from-home" className="card-btn">View More →</Link>
+      </article>
+
+     
+    </div>
+  </div>
+</section>
+
 
       {/* AI TOOLS */}
       <section className="ai-section">

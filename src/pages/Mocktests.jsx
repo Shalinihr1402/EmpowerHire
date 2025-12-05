@@ -1,23 +1,41 @@
-import React from "react";
-import "./JobsPage.css";   // shared glowing card UI
-import "./MockTests.css";  // extra styles for this page
+import React, { useState } from "react";
+import "./JobsPage.css";
+import "./MockTests.css";
 
 export default function MockTests() {
+  const [openCategory, setOpenCategory] = useState(null);
+
+  const toggleCategory = (index) => {
+    setOpenCategory(openCategory === index ? null : index);
+  };
+
   return (
     <div className="jobs-wrapper">
-      <h1 className="jobs-heading">Mock Tests</h1>
+      <h1 className="jobs-heading">Job-Based Mock Tests</h1>
       <p className="jobs-text">
-        Practice aptitude, communication, typing, reasoning, and job-based mock tests 
-        to improve your skills and get job-ready.
+        Select a job category and start practicing role-specific mock tests.
       </p>
 
-      {/* Mock Test Categories */}
-      <div className="jobs-grid">
-        {testCategories.map((test, index) => (
-          <div key={index} className="jobs-card mock-card">
-            <h2>{test.title}</h2>
-            <p>{test.description}</p>
-            <button className="apply-btn">Start Test</button>
+      <div className="mock-category-container">
+        {jobMockCategories.map((cat, index) => (
+          <div key={index} className="mock-category">
+            <div className="category-header" onClick={() => toggleCategory(index)}>
+              <span className="category-icon">{cat.icon}</span>
+              <h2>{cat.title}</h2>
+              <span className="arrow">{openCategory === index ? "▲" : "▼"}</span>
+            </div>
+
+            {openCategory === index && (
+              <div className="category-tests">
+                {cat.tests.map((test, tIndex) => (
+                  <div key={tIndex} className="test-card">
+                    <h3>{test.name}</h3>
+                    <p>{test.details}</p>
+                    <button className="apply-btn">Start Test</button>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>
@@ -25,30 +43,70 @@ export default function MockTests() {
   );
 }
 
-/* TEST CATEGORIES DATA */
-const testCategories = [
+const jobMockCategories = [
   {
-    title: "Aptitude Test",
-    description: "Quantitative, logical reasoning, number series, and puzzles.",
+    title: "IT / Software Jobs",
+    icon: "💻",
+    tests: [
+      { name: "Programming Logic Test", details: "Loops, functions, debugging." },
+      { name: "MCQ Coding Test", details: "Java, Python, C basics." },
+      { name: "Error Solving Test", details: "Find and fix code errors." },
+      { name: "Aptitude for IT", details: "Logical, reasoning, tech aptitude." },
+    ],
   },
+
   {
-    title: "Typing Speed Test",
-    description: "Measure your WPM speed for data entry and clerical roles.",
+    title: "BPO / Customer Support",
+    icon: "🎧",
+    tests: [
+      { name: "English Communication Test", details: "Grammar, accent, vocabulary." },
+      { name: "Customer Handling Test", details: "Chat, calls, email scenarios." },
+      { name: "Listening Skill Test", details: "Call audio and questions." },
+      { name: "Typing Test", details: "WPM speed test for chat support." },
+    ],
   },
+
   {
-    title: "English Communication Test",
-    description: "Grammar, vocabulary, voice & accent, comprehension.",
+    title: "Data Entry / Back Office",
+    icon: "⌨️",
+    tests: [
+      { name: "Typing Speed Test", details: "Words per minute, accuracy." },
+      { name: "Accuracy Test", details: "Error-free typing practice." },
+      { name: "Data Checking Test", details: "Compare & verify dataset." },
+      { name: "MS Office Test", details: "Excel, Word basic tasks." },
+    ],
   },
+
   {
-    title: "Customer Support Test",
-    description: "Chat handling, email drafting, and call scenario practice.",
+    title: "Government Job Preparation",
+    icon: "🏛️",
+    tests: [
+      { name: "General Knowledge Test", details: "GK, current affairs." },
+      { name: "General English Test", details: "Grammar, comprehension." },
+      { name: "Aptitude Test", details: "Quantitative aptitude." },
+      { name: "Reasoning Test", details: "Puzzles, number series." },
+    ],
   },
+
   {
-    title: "IT Skills Test",
-    description: "Basic programming, debugging, error solving and logic.",
+    title: "Banking / Finance Jobs",
+    icon: "🏦",
+    tests: [
+      { name: "Quantitative Aptitude", details: "Profit-loss, interest, DI." },
+      { name: "Reasoning Ability", details: "Coding, puzzles, logic." },
+      { name: "Banking Awareness", details: "Banking terms & GK." },
+      { name: "English Language", details: "Reading comprehension & grammar." },
+    ],
   },
+
   {
-    title: "HR Interview Questions",
-    description: "Common HR interview questions with answer evaluation.",
+    title: "Retail / Sales Jobs",
+    icon: "🛒",
+    tests: [
+      { name: "Communication Test", details: "Sales speaking test." },
+      { name: "Customer Handling", details: "Complaint role-play." },
+      { name: "Basic Math Test", details: "Billing & quick math." },
+      { name: "Product Knowledge Test", details: "Sales scenario MCQs." },
+    ],
   },
 ];

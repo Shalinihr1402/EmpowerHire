@@ -13,6 +13,8 @@ import GovernmentJobs from "./pages/GovernmentJobs";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import MockTests from "./pages/Mocktests";
+import Jobs from "./pages/Job";
+import CategoryButton from "./pages/CategoryButton";
 
 
 
@@ -33,7 +35,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/mock-tests" element={<MockTests />} />
-
+        <Route path="/categoryButton" element={<CategoryButton/>} />
+       
+            <Route path="/jobs" element={<Jobs />} />
       </Routes>
     </Router>
   );

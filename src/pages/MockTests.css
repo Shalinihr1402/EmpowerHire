@@ -1,9 +1,108 @@
-.mock-card h2 {
-  color: #0057ff;
-  font-weight: 800;
+
+/* CATEGORY CONTAINER */
+.mock-category-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 25px;
 }
 
-.mock-card p {
+/* CATEGORY BOX */
+.mock-category {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 0;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.07);
+  overflow: hidden;
+  border-left: 5px solid #0057ff;
+}
+
+/* CATEGORY HEADER */
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.category-header:hover {
+  background: #f2f6ff;
+}
+
+/* ICON LEFT */
+.category-icon {
+  font-size: 28px;
+  margin-right: 10px;
+}
+
+.category-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+  flex: 1;
+  margin: 0;
+}
+
+/* DOWN ARROW */
+.arrow {
+  font-size: 18px;
+  color: #0057ff;
+}
+
+/* TEST LIST INSIDE EACH CATEGORY */
+.category-tests {
+  padding: 15px 20px 20px 20px;
+  border-top: 1px solid #e6e6e6;
+  animation: slideDown 0.35s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* TEST CARD INSIDE CATEGORY */
+.test-card {
+  background: #f7f9ff;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.test-card:hover {
+  background: #eef3ff;
+  transform: translateY(-3px);
+}
+
+/* TEST HEADING */
+.test-card h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0057ff;
+}
+
+/* TEST DESCRIPTION */
+.test-card p {
   color: #33415c;
-  margin-bottom: 18px;
+  margin: 5px 0 12px 0;
+  font-size: 14px;
+}
+
+/* BUTTON INSIDE TEST CARD */
+.apply-btn {
+  width: 140px;
+  padding: 8px 12px;
+  font-size: 15px;
+  font-weight: 600;
+  background: #0057ff;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.apply-btn:hover {
+  background: #003eaa;
 }
