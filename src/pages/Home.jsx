@@ -18,7 +18,10 @@ export default function Home() {
               A dedicated inclusive hiring platform connecting specially-abled individuals
               with supportive companies, meaningful careers, and equal opportunities across India.
             </p>
-              <a href="/jobs" className="btn-primary hero-link-btn">Explore Opportunities →</a>
+          <Link to="/it-jobs" className="btn-primary hero-link-btn">
+  Explore Opportunities →
+</Link>
+
 
           </div>
 

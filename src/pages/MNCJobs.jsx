@@ -1,35 +1,36 @@
 import React from "react";
-import "./JobsPage.css"; // shared modern UI for all job pages
+import "./JobsPage.css";
 
 export default function MNCJobs() {
   return (
     <div className="jobs-wrapper">
       <h1 className="jobs-heading">MNC Jobs</h1>
-      <p className="jobs-text">
-        Find opportunities in top multinational companies like TCS, Infosys,
-        Wipro, Accenture, Capgemini, and Cognizant.
-      </p>
+      <p className="jobs-text">Top multinational companies hiring across India.</p>
 
-      {/* Search Bar */}
+      <div className="jobs-filters">
+        <select><option>Location</option></select>
+        <select><option>Salary Range</option></select>
+        <select><option>Work Type</option></select>
+      </div>
+
       <div className="jobs-search">
-        <input type="text" placeholder="Search MNC job roles..." />
+        <input type="text" placeholder="Search MNC roles..." />
         <button>Search</button>
       </div>
 
-      {/* Job Cards */}
       <div className="jobs-grid">
-        {jobData.map((job, index) => (
+        {mncData.map((job, index) => (
           <div key={index} className="jobs-card">
             <h2>{job.title}</h2>
             <p className="company">{job.company}</p>
+            <p><strong>Skills:</strong> {job.skills}</p>
+            <p><strong>Location:</strong> {job.location}</p>
 
-            <p>
-              <strong>Skills:</strong> {job.skills}
-            </p>
-
-            <p>
-              <strong>Location:</strong> {job.location}
-            </p>
+            <div className="tag-row">
+              {job.tags.map((tag, i) => (
+                <span className="job-tag" key={i}>{tag}</span>
+              ))}
+            </div>
 
             <button className="apply-btn">Apply Now</button>
           </div>
@@ -39,30 +40,26 @@ export default function MNCJobs() {
   );
 }
 
-/* MNC Job Data */
-const jobData = [
+const mncData = [
   {
-    title: "Business Analyst",
-    company: "Accenture",
-    skills: "SQL, Data Visualization, Excel",
-    location: "Bangalore",
+    title: "Process Associate",
+    company: "Cognizant",
+    skills: "English, Typing",
+    location: "Chennai",
+    tags: ["Hybrid"],
   },
   {
     title: "IT Support Engineer",
-    company: "Capgemini",
+    company: "IBM",
     skills: "Troubleshooting, Networking",
-    location: "Chennai",
+    location: "Bangalore",
+    tags: ["On-Site", "Wheelchair Accessible"],
   },
   {
-    title: "Cloud Administrator",
-    company: "Infosys",
-    skills: "AWS, Linux, Shell Scripting",
+    title: "Financial Analyst",
+    company: "Deloitte",
+    skills: "Excel, Analysis",
     location: "Hyderabad",
-  },
-  {
-    title: "Java Developer",
-    company: "Cognizant",
-    skills: "Java, Spring Boot, API",
-    location: "Pune",
+    tags: ["Hybrid"],
   },
 ];
