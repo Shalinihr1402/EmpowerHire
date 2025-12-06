@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";   // <-- IMPORTANT
 import "./JobsPage.css";  // Shared design for all job pages
 
 export default function AITools() {
@@ -15,7 +16,11 @@ export default function AITools() {
             <div className="ai-icon">{tool.icon}</div>
             <h2>{tool.title}</h2>
             <p>{tool.description}</p>
-            <button className="apply-btn">Open Tool</button>
+
+            {/* FIXED: Link instead of button */}
+            <Link to={tool.link} className="apply-btn">
+              Open Tool
+            </Link>
           </div>
         ))}
       </div>
@@ -30,23 +35,27 @@ const tools = [
     title: "AI Resume Score",
     description:
       "Get an AI-powered score and feedback to improve your resume instantly.",
+    link: "/ai-resume-score",
   },
   {
     icon: "🎙️",
     title: "Voice Job Search",
     description:
       "Search for jobs using your voice through AI voice recognition.",
+    link: "/voice-job-search",
   },
   {
     icon: "🤖",
     title: "AI Career Suggestions",
     description:
       "Let AI suggest job roles based on your skills and experience.",
+    link: "/ai-career-suggestions",
   },
   {
     icon: "💬",
     title: "Interview Mentor",
     description:
       "Practice interview questions with an AI-based interview assistant.",
+    link: "/interview-mentor",
   },
 ];

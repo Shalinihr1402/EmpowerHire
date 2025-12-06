@@ -1,0 +1,91 @@
+.job-details-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.job-details-card {
+  width: 700px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.job-logo {
+  width: 120px;
+  margin-bottom: 15px;
+}
+
+.job-title {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.job-company {
+  font-size: 18px;
+  color: #555;
+}
+
+.job-info p {
+  margin: 5px 0;
+}
+
+.job-tags {
+  margin: 15px 0;
+}
+
+.job-tag {
+  background: #eef;
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin-right: 5px;
+  font-size: 13px;
+}
+
+.skills-list li {
+  margin: 5px 0;
+}
+
+.apply-btn-big {
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px;
+  background: #4c57ff;
+  color: white;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* MODAL */
+.apply-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.apply-card {
+  background: white;
+  padding: 25px;
+  width: 350px;
+  border-radius: 10px;
+}
+
+.apply-input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.close-btn {
+  text-align: center;
+  color: red;
+  margin-top: 10px;
+  cursor: pointer;
+}

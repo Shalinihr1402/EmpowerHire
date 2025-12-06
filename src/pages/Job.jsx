@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./JobsPage.css";
+import { Link } from "react-router-dom";
+
 
 export default function Jobs() {
 
@@ -52,7 +54,11 @@ export default function Jobs() {
               ))}
             </div>
 
-            <button className="apply-btn">Apply Now</button>
+            
+            <Link to={`/job/${index}`} className="apply-btn">
+  View Details
+</Link>
+
           </div>
         ))}
       </div>

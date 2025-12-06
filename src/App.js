@@ -15,6 +15,18 @@ import Register from "./pages/Register";
 import MockTests from "./pages/Mocktests";
 import Jobs from "./pages/Job";
 import CategoryButton from "./pages/CategoryButton";
+import AIResumeScore from "./pages/AIResumeScore";
+import VoiceJobSearch from "./pages/VoiceJobSearch";
+import AICareerSuggestions from "./pages/AICareerSuggestions";
+import InterviewMentor from "./pages/InterviewMentor";
+
+import JobDetails from "./pages/JobDetails";
+
+import ApplySuccess from "./pages/ApplySuccess";
+
+
+
+
 
 
 
@@ -37,7 +49,19 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/mock-tests" element={<MockTests />} />
         <Route path="/categoryButton" element={<CategoryButton/>} />
-       
+        <Route path="/ai-resume-score" element={<AIResumeScore />} />
+<Route path="/voice-job-search" element={<VoiceJobSearch />} />
+<Route path="/ai-career-suggestions" element={<AICareerSuggestions />} />
+<Route path="/interview-mentor" element={<InterviewMentor />} />
+<Route path="/ai-resume-score" element={<AIResumeScore />} />
+<Route path="/voice-job-search" element={<VoiceJobSearch />} />
+<Route path="/ai-career-suggestions" element={<AICareerSuggestions />} />
+<Route path="/interview-mentor" element={<InterviewMentor />} />
+
+<Route path="/job/:id" element={<JobDetails />} />
+<Route path="/apply-success" element={<ApplySuccess />} />
+
+
             <Route path="/jobs" element={<Jobs />} />
       </Routes>
     </Router>
