@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="home">
 
-      {/* HERO */}
+    
       <section className="hero-section card-universal">
         <div className="container hero-inner">
           <div className="hero-left">
